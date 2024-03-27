@@ -1,7 +1,7 @@
 import './modal.styles.css';
 import { useAtomValue } from 'jotai';
 import UserForm from '../components/user-form/user-form.component.jsx';
-import {modalUserDataAtom} from '../../../domains/todo-list/store/todo-list.store.js';
+import { modalUserDataAtom } from '../../../domains/todo-list/store/todo-list.store.js';
 
 const Modal = ({ modalData, handleAddUser, userId, isEdit, children }) => {
   const modalUserData = useAtomValue(modalUserDataAtom);
