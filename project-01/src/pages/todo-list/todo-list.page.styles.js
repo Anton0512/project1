@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 
+
 export const Container = styled.div`
   display: flex;
   flex-direction: column;
@@ -31,6 +32,7 @@ export const ButtonRow = styled.div`
   display: flex;
   justify-content: center;
   margin-top: 20px;
+  gap: 10px;
 `;
 
 export const Button = styled.button`
@@ -45,3 +47,13 @@ export const Button = styled.button`
   cursor: pointer;
   font-size: 1em;
 `;
+
+// export const GradientButton = styled(Button)`
+//   background-color: #1890ff;
+//   border-color: #1890ff;
+
+//   &:hover {
+//     background-color: #40a9ff;
+//     border-color: #40a9ff;
+//   }
+// `;

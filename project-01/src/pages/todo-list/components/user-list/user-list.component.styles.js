@@ -33,3 +33,9 @@ export const Button = styled.button`
   font-size: 1em;
   font-weight: 400;
 `;
+
+export const DivWrapper = styled.div`
+  display: flex;
+  gap: 10px;
+  padding: 0 10px;
+`;
