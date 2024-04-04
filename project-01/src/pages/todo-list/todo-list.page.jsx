@@ -1,18 +1,21 @@
 import { useState } from 'react';
 import { useAtom } from 'jotai';
-
 import {
   Container,
   Label,
-  Select,
-  Button,
   ButtonContainer,
   ButtonRow,
 } from './todo-list.page.styles.js';
-import {dataUser, modalActiveAtom, modalIsEditDataAtom} from '../../domains/todo-list/store/todo-list.store.js';
+import {
+  dataUser,
+  modalActiveAtom,
+  modalIsEditDataAtom,
+} from '../../domains/todo-list/store/todo-list.store.js';
 import UserList from './components/user-list/user-list.component.jsx';
 import Modal from './modal/modal.jsx';
-
+import ButtonAntd from '../../common/components/button/button-antd/button-antd.component.jsx';
+import SelectElement from '../../common/components/select-antd/select-antd.component.jsx';
+import { Select } from 'antd';
 
 const TodoListPage = () => {
   const [users, setUsers] = useAtom(dataUser);
@@ -51,8 +54,8 @@ const TodoListPage = () => {
     }
   };
 
-  const changeRole = (event) => {
-    setSelectedRole(event.target.value);
+  const changeRole = (value) => {
+    setSelectedRole(value);
   };
 
   const handleSortAz = () => {
@@ -77,28 +80,32 @@ const TodoListPage = () => {
     <>
       <Container>
         <Label htmlFor="role-filter">Filter by roles:</Label>
-        <Select onChange={changeRole} value={selectedRole} id="role-filter">
-          <option value="all">All roles</option>
-          <option value="admin">admin</option>
-          <option value="user">user</option>
-        </Select>
+        <SelectElement
+          onChange={changeRole}
+          value={selectedRole}
+          id="role-filter"
+        >
+          <Select.Option value="all">All roles</Select.Option>
+          <Select.Option value="admin">Admin</Select.Option>
+          <Select.Option value="user">User</Select.Option>
+        </SelectElement>
         <ButtonContainer>
           <ButtonRow>
-            <Button onClick={handleSortAz}>Sort by name A-Z</Button>
-            <Button onClick={handleSortZa}>Sort by name Z-A</Button>
+            <ButtonAntd onClick={handleSortAz}>Sort by name A-Z</ButtonAntd>
+            <ButtonAntd onClick={handleSortZa}>Sort by name Z-A</ButtonAntd>
           </ButtonRow>
           <ButtonRow>
-            <Button onClick={handleSortAgeFromZeroToHunndred}>
+            <ButtonAntd onClick={handleSortAgeFromZeroToHunndred}>
               Sort by age 0-100
-            </Button>
-            <Button onClick={handleSortAgeFromHunndredToZero}>
+            </ButtonAntd>
+            <ButtonAntd onClick={handleSortAgeFromHunndredToZero}>
               Sort by age 100-0
-            </Button>
+            </ButtonAntd>
           </ButtonRow>
           <ButtonRow>
-            <Button className="open-btn" onClick={() => setModalData(true)}>
+            <ButtonAntd onClick={() => setModalData(true)}>
               Create user
-            </Button>
+            </ButtonAntd>
           </ButtonRow>
         </ButtonContainer>
       </Container>
@@ -112,6 +119,7 @@ const TodoListPage = () => {
       />
     </>
   );
-}
+};
 
+TodoListPage.propTypes;
 export default TodoListPage;
