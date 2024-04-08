@@ -1,23 +1,22 @@
-import styled from 'styled-components';
+import Sstyled from 'styled-components';
 
-export const FormContainer = styled.div`
+export const FormContainer = Sstyled.div`
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
-  align-items: center;
+  align-items: center; 
   border: 1px solid blue;
   padding: 25px;
   color: #bf4f74;
 `;
 
-export const InputWrapper = styled.div`
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-column-gap: 20px;
+export const InputWrapper = Sstyled.div`
+  display: flex;
+  justify-content: space-between;
   align-items: center;
+  gap: 20px;
 `;
 
-export const Input = styled.input`
+export const Input = Sstyled.input`
   color: #bf4f74;
   height: 25px;
   font-size: 1em;
@@ -26,21 +25,20 @@ export const Input = styled.input`
   margin: 0 15px;
 `;
 
-export const ButtonWrapper = styled.div`
+export const ButtonWrapper = Sstyled.div`
   display: flex;
   justify-content: space-around;
   margin-top: 20px;
 `;
 
-export const Select = styled.select`
+export const Select = Sstyled.select`
   height: 25px;
   font-size: 1em;
   border: 1px solid #bf4f74;
   margin: 0 15px;
-  width: 100%;
 `;
 
-export const ErrorMessageStyle = styled.div`
+export const ErrorMessageStyle = Sstyled.div`
   color: red;
   margin-bottom: 20px;
   display: flex;
