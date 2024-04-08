@@ -18,15 +18,13 @@ const GlobalStyle = createGlobalStyle`
   }
 
   .custom-select-dropdown {
-    background-color: #b3bcfd;
+    background-color: #77e789;
   } 
 
   .ant-input-password {
     background: #b3bcfd;
     border-color: #4096ff;
     border-radius: 5px;
-    width: 100%;
-    max-width: 185px;
   }
 `;
 

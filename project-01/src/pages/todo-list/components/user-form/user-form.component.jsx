@@ -1,9 +1,11 @@
 import { useState, useEffect } from 'react';
 import {
-  FormContainer,
-  InputWrapper,
-  ButtonWrapper,
-  ErrorMessageStyle,
+  SFormContainer,
+  SInputWrapperColOne,
+  SInputWrapperColTwo,
+  SButtonWrapper,
+  SErrorMessageStyle,
+  SInputColContainer
 } from './user-form.component.styles.js';
 import { useAtomValue } from 'jotai';
 import { EmailValidator } from '/src/common/utils/EmailValidator.jsx';
@@ -64,39 +66,42 @@ const UserForm = ({ handleAddUser, userId, modalData, isEdit }) => {
   };
 
   return (
-    <FormContainer>
+    <SFormContainer>
       <Form form={form} onFinish={handleSubmit}>
-        <InputWrapper>
-          <Form.Item name="name" label="Name">
-            <InputElement placeholder="name" />
-          </Form.Item>
-          <Form.Item name="email" label="Email">
-            <InputElement placeholder="email" />
-          </Form.Item>
-        </InputWrapper>
-        {emailError && (
-          <ErrorMessageStyle>Email is not valid!</ErrorMessageStyle>
-        )}
-        <InputWrapper>
-          <Form.Item name="surname" label="Surname">
-            <InputElement placeholder="surname" />
-          </Form.Item>
-          <Form.Item name="age" label="Age">
-            <InputElement placeholder="age" />
-          </Form.Item>
-        </InputWrapper>
-        <InputWrapper>
-          <Form.Item name="role" label="Select a role">
-            <SelectElement placeholder="Select" popupClassName='custom-select-dropdown'>
-              <Select.Option value="admin">Admin</Select.Option>
-              <Select.Option value="user">User</Select.Option>
-            </SelectElement>
-          </Form.Item>
-          <Form.Item name="password" label="Password">
-            <Input.Password placeholder="password" />
-          </Form.Item>
-        </InputWrapper>
-        <ButtonWrapper>
+        <SInputColContainer>
+          <SInputWrapperColOne>
+            <Form.Item name="name" label="Name">
+              <InputElement placeholder="name" />
+            </Form.Item>
+            <Form.Item name="surname" label="Surname">
+              <InputElement placeholder="surname" />
+            </Form.Item>
+            <Form.Item name="role" label="Select a role">
+              <SelectElement
+                placeholder="Select"
+                popupClassName="custom-select-dropdown"
+              >
+                <Select.Option value="admin">Admin</Select.Option>
+                <Select.Option value="user">User</Select.Option>
+              </SelectElement>
+            </Form.Item>
+          </SInputWrapperColOne>
+          {emailError && (
+            <SErrorMessageStyle>Email is not valid!</SErrorMessageStyle>
+          )}
+          <SInputWrapperColTwo>
+            <Form.Item name="email" label="Email">
+              <InputElement placeholder="email" />
+            </Form.Item>
+            <Form.Item name="age" label="Age">
+              <InputElement placeholder="age" />
+            </Form.Item>
+            <Form.Item name="password" label="Password">
+              <Input.Password placeholder="password" />
+            </Form.Item>
+          </SInputWrapperColTwo>
+        </SInputColContainer>
+        <SButtonWrapper>
           <Form.Item>
             <ButtonAntd onClick={handleReset} gradientstatus="">
               Reset
@@ -107,9 +112,9 @@ const UserForm = ({ handleAddUser, userId, modalData, isEdit }) => {
               Send
             </ButtonAntd>
           </Form.Item>
-        </ButtonWrapper>
+        </SButtonWrapper>
       </Form>
-    </FormContainer>
+    </SFormContainer>
   );
 };
 

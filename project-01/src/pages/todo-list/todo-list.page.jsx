@@ -1,10 +1,10 @@
 import { useState } from 'react';
 import { useAtom } from 'jotai';
 import {
-  Container,
-  Label,
-  ButtonContainer,
-  ButtonRow,
+  SContainer,
+  SLabel,
+  SButtonContainer,
+  SButtonRow,
 } from './todo-list.page.styles.js';
 import {
   dataUser,
@@ -78,8 +78,8 @@ const TodoListPage = () => {
 
   return (
     <>
-      <Container>
-        <Label htmlFor="role-filter">Filter by roles:</Label>
+      <SContainer>
+        <SLabel htmlFor="role-filter">Filter by roles:</SLabel>
         <SelectElement
           onChange={changeRole}
           value={selectedRole}
@@ -90,26 +90,26 @@ const TodoListPage = () => {
           <Select.Option value="admin">Admin</Select.Option>
           <Select.Option value="user">User</Select.Option>
         </SelectElement>
-        <ButtonContainer>
-          <ButtonRow>
+        <SButtonContainer>
+          <SButtonRow>
             <ButtonAntd onClick={handleSortAz}>Sort by name A-Z</ButtonAntd>
             <ButtonAntd onClick={handleSortZa}>Sort by name Z-A</ButtonAntd>
-          </ButtonRow>
-          <ButtonRow>
+          </SButtonRow>
+          <SButtonRow>
             <ButtonAntd onClick={handleSortAgeFromZeroToHunndred}>
               Sort by age 0-100
             </ButtonAntd>
             <ButtonAntd onClick={handleSortAgeFromHunndredToZero}>
               Sort by age 100-0
             </ButtonAntd>
-          </ButtonRow>
-          <ButtonRow>
+          </SButtonRow>
+          <SButtonRow>
             <ButtonAntd onClick={() => setModalData(true)}>
               Create user
             </ButtonAntd>
-          </ButtonRow>
-        </ButtonContainer>
-      </Container>
+          </SButtonRow>
+        </SButtonContainer>
+      </SContainer>
 
       <UserList users={filterUsersByRole()} handleDelete={handleDelete} />
       <Modal
