@@ -2,6 +2,9 @@ import { Select as AntdSelect } from 'antd';
 import styled from 'styled-components';
 
 export const SSelect = styled(AntdSelect)`
-  width: 50%;
-  border-radius: 10px;
+  &.ant-select {
+    width: auto;
+    min-width: 100%;
+    border-radius: 5px;
+  }
 `;

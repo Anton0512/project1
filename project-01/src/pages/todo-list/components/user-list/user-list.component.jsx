@@ -1,18 +1,16 @@
 import { useAtom, useSetAtom } from 'jotai';
-
 import {
   Li,
   Ul,
   UserListContainer,
   DivWrapper,
-  // Button,
 } from './user-list.component.styles.js';
 import {
   modalActiveAtom,
   modalIsEditDataAtom,
   modalUserDataAtom,
-} from '../../../../domains/todo-list/store/todo-list.store.js';
-import ButtonAntd from '../../../../common/components/button/button-antd/button-antd.component.jsx';
+} from '/src/domains/todo-list/store/todo-list.store.js';
+import ButtonAntd from '/src/common/components/button/button-antd/button-antd.component.jsx';
 
 const UserList = ({ users, handleDelete }) => {
   const [, setModalData] = useAtom(modalActiveAtom);

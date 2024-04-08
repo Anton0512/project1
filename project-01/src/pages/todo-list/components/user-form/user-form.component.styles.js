@@ -2,7 +2,8 @@ import styled from 'styled-components';
 
 export const FormContainer = styled.div`
   display: flex;
-  justify-content: center;;
+  flex-wrap: wrap;
+  justify-content: center;
   align-items: center;
   border: 1px solid blue;
   padding: 25px;
@@ -10,9 +11,9 @@ export const FormContainer = styled.div`
 `;
 
 export const InputWrapper = styled.div`
-  display: flex;
-  justify-content: space-between;
-  gap: 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-column-gap: 20px;
   align-items: center;
 `;
 
@@ -28,6 +29,7 @@ export const Input = styled.input`
 export const ButtonWrapper = styled.div`
   display: flex;
   justify-content: space-around;
+  margin-top: 20px;
 `;
 
 export const Select = styled.select`
@@ -43,5 +45,4 @@ export const ErrorMessageStyle = styled.div`
   margin-bottom: 20px;
   display: flex;
   justify-content: space-around;
-  // align-items: center;
 `;

@@ -11,6 +11,7 @@ export const UserListContainer = styled.div`
 
 export const Ul = styled.ul`
   list-style-type: none;
+  margin: 0 auto;
 `;
 
 export const Li = styled.li`

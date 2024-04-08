@@ -26,7 +26,6 @@ body {
   margin: 0;
   display: flex;
   place-items: center;
- 
 }
 
 h1 {
@@ -34,26 +33,6 @@ h1 {
   line-height: 1.1;
 }
 
-/* input {
-  border: 1px solid #9e9e9e;
-  color: #000000;
-  padding: 3px;
-
-  background: #fff;
-} */
-
-/* button {
- 
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 400;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-  color: white;
-} */
 button:hover {
   border-color: #646cff;
 }

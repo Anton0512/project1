@@ -10,11 +10,11 @@ import {
   dataUser,
   modalActiveAtom,
   modalIsEditDataAtom,
-} from '../../domains/todo-list/store/todo-list.store.js';
+} from '/src/domains/todo-list/store/todo-list.store.js';
 import UserList from './components/user-list/user-list.component.jsx';
 import Modal from './modal/modal.jsx';
-import ButtonAntd from '../../common/components/button/button-antd/button-antd.component.jsx';
-import SelectElement from '../../common/components/select-antd/select-antd.component.jsx';
+import ButtonAntd from '/src/common/components/button/button-antd/button-antd.component.jsx';
+import SelectElement from '/src/common/components/select-antd/select-antd.component.jsx';
 import { Select } from 'antd';
 
 const TodoListPage = () => {
@@ -84,6 +84,7 @@ const TodoListPage = () => {
           onChange={changeRole}
           value={selectedRole}
           id="role-filter"
+          popupClassName="custom-select-dropdown"
         >
           <Select.Option value="all">All roles</Select.Option>
           <Select.Option value="admin">Admin</Select.Option>
