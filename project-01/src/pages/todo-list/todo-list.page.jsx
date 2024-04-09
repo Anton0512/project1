@@ -1,20 +1,20 @@
 import { useState } from 'react';
 import { useAtom } from 'jotai';
 import {
-  Container,
-  Label,
-  ButtonContainer,
-  ButtonRow,
+  SContainer,
+  SLabel,
+  SButtonContainer,
+  SButtonRow,
 } from './todo-list.page.styles.js';
 import {
   dataUser,
   modalActiveAtom,
   modalIsEditDataAtom,
-} from '../../domains/todo-list/store/todo-list.store.js';
+} from '/src/domains/todo-list/store/todo-list.store.js';
 import UserList from './components/user-list/user-list.component.jsx';
 import Modal from './modal/modal.jsx';
-import ButtonAntd from '../../common/components/button/button-antd/button-antd.component.jsx';
-import SelectElement from '../../common/components/select-antd/select-antd.component.jsx';
+import ButtonAntd from '/src/common/components/button/button-antd/button-antd.component.jsx';
+import SelectElement from '/src/common/components/select-antd/select-antd.component.jsx';
 import { Select } from 'antd';
 
 const TodoListPage = () => {
@@ -78,37 +78,38 @@ const TodoListPage = () => {
 
   return (
     <>
-      <Container>
-        <Label htmlFor="role-filter">Filter by roles:</Label>
+      <SContainer>
+        <SLabel htmlFor="role-filter">Filter by roles:</SLabel>
         <SelectElement
           onChange={changeRole}
           value={selectedRole}
           id="role-filter"
+          popupClassName="custom-select-dropdown"
         >
           <Select.Option value="all">All roles</Select.Option>
           <Select.Option value="admin">Admin</Select.Option>
           <Select.Option value="user">User</Select.Option>
         </SelectElement>
-        <ButtonContainer>
-          <ButtonRow>
+        <SButtonContainer>
+          <SButtonRow>
             <ButtonAntd onClick={handleSortAz}>Sort by name A-Z</ButtonAntd>
             <ButtonAntd onClick={handleSortZa}>Sort by name Z-A</ButtonAntd>
-          </ButtonRow>
-          <ButtonRow>
+          </SButtonRow>
+          <SButtonRow>
             <ButtonAntd onClick={handleSortAgeFromZeroToHunndred}>
               Sort by age 0-100
             </ButtonAntd>
             <ButtonAntd onClick={handleSortAgeFromHunndredToZero}>
               Sort by age 100-0
             </ButtonAntd>
-          </ButtonRow>
-          <ButtonRow>
+          </SButtonRow>
+          <SButtonRow>
             <ButtonAntd onClick={() => setModalData(true)}>
               Create user
             </ButtonAntd>
-          </ButtonRow>
-        </ButtonContainer>
-      </Container>
+          </SButtonRow>
+        </SButtonContainer>
+      </SContainer>
 
       <UserList users={filterUsersByRole()} handleDelete={handleDelete} />
       <Modal

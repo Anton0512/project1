@@ -1,18 +1,16 @@
 import { useAtom, useSetAtom } from 'jotai';
-
 import {
-  Li,
-  Ul,
-  UserListContainer,
-  DivWrapper,
-  // Button,
+  SLi,
+  SUl,
+  SUserListContainer,
+  SDivWrapper,
 } from './user-list.component.styles.js';
 import {
   modalActiveAtom,
   modalIsEditDataAtom,
   modalUserDataAtom,
-} from '../../../../domains/todo-list/store/todo-list.store.js';
-import ButtonAntd from '../../../../common/components/button/button-antd/button-antd.component.jsx';
+} from '/src/domains/todo-list/store/todo-list.store.js';
+import ButtonAntd from '/src/common/components/button/button-antd/button-antd.component.jsx';
 
 const UserList = ({ users, handleDelete }) => {
   const [, setModalData] = useAtom(modalActiveAtom);
@@ -32,10 +30,10 @@ const UserList = ({ users, handleDelete }) => {
   };
 
   return (
-    <UserListContainer>
-      <Ul>
+    <SUserListContainer>
+      <SUl>
         {users?.map((user) => (
-          <Li key={user.id}>
+          <SLi key={user.id}>
             <div style={userRoleStyleText(user)}>
               {user.name +
                 ' ' +
@@ -48,18 +46,18 @@ const UserList = ({ users, handleDelete }) => {
               {replacePassword(user.password) + ' '}
               {' ' + user.email}
             </div>
-            <DivWrapper>
+            <SDivWrapper>
               <ButtonAntd onClick={() => editClickHandler(user.id)}>
                 Edit
               </ButtonAntd>
               <ButtonAntd onClick={() => handleDelete(user.id)}>
                 Delete
               </ButtonAntd>
-            </DivWrapper>
-          </Li>
+            </SDivWrapper>
+          </SLi>
         ))}
-      </Ul>
-    </UserListContainer>
+      </SUl>
+    </SUserListContainer>
   );
 };
 UserList.propTypes;

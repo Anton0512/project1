@@ -1,4 +1,5 @@
 import { atom } from 'jotai';
+
 export const dataUser = atom([
   {
     id: 1,
