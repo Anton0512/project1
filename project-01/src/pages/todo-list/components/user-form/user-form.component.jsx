@@ -64,6 +64,7 @@ const UserForm = ({ handleAddUser, userId, modalData, isEdit }) => {
     form.resetFields();
     setEmailError(false);
   };
+ 
 
   return (
     <SFormContainer>
@@ -86,10 +87,11 @@ const UserForm = ({ handleAddUser, userId, modalData, isEdit }) => {
               </SelectElement>
             </Form.Item>
           </SInputWrapperColOne>
-          {emailError && (
-            <SErrorMessageStyle>Email is not valid!</SErrorMessageStyle>
-          )}
+
           <SInputWrapperColTwo>
+            {emailError && (
+              <SErrorMessageStyle>Email is not valid!</SErrorMessageStyle>
+            )}
             <Form.Item name="email" label="Email">
               <InputElement placeholder="email" />
             </Form.Item>

@@ -25,6 +25,8 @@ const GlobalStyle = createGlobalStyle`
     background: #b3bcfd;
     border-color: #4096ff;
     border-radius: 5px;
+    width: 200px;
+
   }
 `;
 

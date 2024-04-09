@@ -7,5 +7,6 @@ export const SInput = styled(AntdInput)`
     background: #b3bcfd;
     align-items: center;
     border-radius: 5px;
+    width: 200px;
   }
 `;
