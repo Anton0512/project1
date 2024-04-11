@@ -4,13 +4,14 @@ const GlobalStyle = createGlobalStyle`
   #root {
     max-width: 1280px;
     margin: 0 auto;
-    padding: 2rem;
     text-align: center;
+    width: 100%;
+    background: aliceblue;
   }
 
   body {
     margin: 0 auto;
-    font-family: "Montserrat", sans-serif;
+    font-family: "Montserrat", sans-serif;  
   }
 
   .open-btn {
@@ -26,7 +27,6 @@ const GlobalStyle = createGlobalStyle`
     border-color: #4096ff;
     border-radius: 5px;
     width: 200px;
-
   }
 `;
 

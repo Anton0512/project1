@@ -5,7 +5,7 @@ import {
   SInputWrapperColTwo,
   SButtonWrapper,
   SErrorMessageStyle,
-  SInputColContainer
+  SInputColContainer,
 } from './user-form.component.styles.js';
 import { useAtomValue } from 'jotai';
 import { EmailValidator } from '/src/common/utils/EmailValidator.jsx';
@@ -64,7 +64,6 @@ const UserForm = ({ handleAddUser, userId, modalData, isEdit }) => {
     form.resetFields();
     setEmailError(false);
   };
- 
 
   return (
     <SFormContainer>

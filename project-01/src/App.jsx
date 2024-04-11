@@ -1,13 +1,14 @@
-import TodoListPage from './pages/todo-list/todo-list.page.jsx';
 import GlobalStyle from './global.style.js';
-import MainLayout from './common/layouts/main.layout.jsx';
+import { routes } from './navigation/route-config.jsx';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
 function App() {
+  const router = createBrowserRouter(routes);
+
   return (
     <>
       <GlobalStyle />
-      <TodoListPage />
-      <MainLayout />
+      <RouterProvider router={router} />
     </>
   );
 }
