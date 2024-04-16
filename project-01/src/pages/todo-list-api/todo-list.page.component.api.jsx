@@ -67,7 +67,6 @@ const TodoListApi = () => {
       <STitle>Todo List Api</STitle>
       <SButton onClick={handleGoBack}>Go Back</SButton>
       <SButton onClick={handleClick}>page + 1</SButton>
-      {/* {state && ( */}
       <SPhotoContainer>
         {photos.map((photo) => (
           <SPhotoWrapper key={photo.id}>
@@ -76,7 +75,6 @@ const TodoListApi = () => {
           </SPhotoWrapper>
         ))}
       </SPhotoContainer>
-      {/* )} */}
     </STodoListApiContainer>
   );
 };
