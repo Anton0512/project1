@@ -10,6 +10,7 @@ export const STodoListApiContainer = styled.div`
   flex-direction: column;
   align-items: center;
   padding: 0 0 20px;
+  gap: 10px;
 `;
 
 export const STitle = styled.h2`
@@ -25,4 +26,31 @@ export const SButton = styled.button`
   padding: 10px 20px;
   cursor: pointer;
   border-radius: 5px;
+`;
+
+export const SPhotoContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+`;
+
+export const SPhotoWrapper = styled.div`
+  margin: 10px;
+  border: 1px solid #ccc;
+  padding: 15px;
+  width: 100%;
+  border-radius: 5px;
+`;
+
+export const SPhotoImage = styled.img`
+  width: 150px;
+  height: 150px;
+`;
+
+export const SPhotoTitle = styled.p`
+  margin-top: 5px;
+  text-align: center;
+  color: white;
+  font-size: 20px;
 `;
